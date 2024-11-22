@@ -1,1 +1,1 @@
-puts "Hello JetRuby!"
+puts "Hello World!"
