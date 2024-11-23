@@ -3,7 +3,7 @@
 require 'rspec'
 require_relative 'greeting_defs'
 
-describe greeting_out do
+describe 'greeting' do
   it 'должен возвращать строку с подбадриванием для людей младше 18 лет' do
     expect(
       greeting_out('Женя', 'Матросов', 16)
