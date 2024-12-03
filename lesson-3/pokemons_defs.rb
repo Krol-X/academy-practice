@@ -2,13 +2,12 @@
 
 def read_how_pokemons?
   print 'Сколько всего покемонов? '
-  s = gets
-  s.to_i
+  gets.to_i
 end
 
-def get_pokemons(n)
+def get_pokemons(n_pokemons)
   pokemons = []
-  (1..n).each do |i|
+  (1..n_pokemons).each do |i|
     new_pok = {}
     print "Имя покемона #{i}: "
     new_pok[:name] = gets.chomp
