@@ -5,6 +5,8 @@ require_relative 'helpers/resources'
 
 module Core
   class Router
+    attr_reader :routes
+
     include Helpers::Requests
     include Helpers::Resources
 
@@ -17,10 +19,16 @@ module Core
       }
     end
 
-    def query(method_name, url, params = {})
+    def fetch(method_name, url, params = {})
       return 'Page not found!' unless @routes[method_name].key? url
 
-      @routes[method_name][url].call({ url: url, params: params })
+      @routes[method_name][url].call(
+        {
+          url: url,
+          params: params,
+          router: self
+        }
+      )
     end
   end
 end

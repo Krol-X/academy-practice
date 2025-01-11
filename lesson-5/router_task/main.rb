@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'core/bootstrap'
+require_relative 'server/bootstrap'
+require_relative 'client/browser'
 
-# Router test
 router = App::Router.new
-puts router.query :get, '/'
+browser = Browser.new(router)
+puts browser.query '/'
+browser.repl

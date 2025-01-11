@@ -2,14 +2,14 @@
 
 module App
   # Инициализация путей
-  ROOT_PATH = File.expand_path('../', __dir__)
+  ROOT_PATH = __dir__ # File.expand_path('../', __dir__)
   DB_PATH = File.join(ROOT_PATH, 'temp', 'db.json')
   CONTROLLERS_PATH = File.join(ROOT_PATH, 'app', 'controllers')
   MODELS_PATH = File.join(ROOT_PATH, 'app', 'models')
 end
 
 # Загрузка класса маршрутизатора
-require_relative 'router'
+require_relative 'core/router'
 
 # Загрузка контроллеров приложения
 Dir.each_child(App::CONTROLLERS_PATH) do |file|
